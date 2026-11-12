@@ -1,0 +1,58 @@
+# Site settings for the UNCC Game Developers documentation site.
+# GitHub Pages builds this with Jekyll; never commit the generated _site/ folder.
+
+title:            Game Jam Organizer Guide
+longtitle:        UNCC Game Developers Game Jam Organizer Guide
+author:           Game Developers @ UNC Charlotte
+description: >
+  How the UNC Charlotte game development club plans and runs game jams.
+
+url:              'https://unccgamedevelopers.github.io'
+baseurl:          '/unccgamedev-docs'
+
+# jekyll-gitbook theme (Apache-2.0), pinned to an exact commit.
+# To update it, see "Updating the theme" in README.md.
+remote_theme: sighingnow/jekyll-gitbook@a7d876936fe650c46eaf9eca92dc7afe0f1e1f17
+
+# Table of contents of headings inside each page
+toc:
+  enabled: true
+  h_min:   2
+  h_max:   3
+
+favicon_path:     /assets/gitbook/images/favicon.ico
+
+markdown:         kramdown
+kramdown:
+  auto_ids:               true
+  input:                  GFM
+  smart_quotes:           lsquo,rsquo,ldquo,rdquo
+  toc_levels:             1..6
+  syntax_highlighter:     rouge
+  syntax_highlighter_opts:
+    guess_lang:           true
+
+syntax_highlighter_style: colorful
+
+# Chapters live in _chapters/ and appear in the sidebar in filename order
+# (01-..., 02-..., and so on). The "posts" collection is not used.
+collections:
+  chapters:
+    output: true
+    permalink: /:collection/:name/
+
+ordered_collections:
+  - chapters
+
+page_width: 800px
+
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - _drafts/
+
+plugins:
+  - jekyll-remote-theme
